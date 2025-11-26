@@ -1,0 +1,39 @@
+<table>
+    <thead>
+        <tr>
+            <th>Call OI</th>
+            <th>Call Change in OI</th>
+            <th>Call Volume</th>
+            <th>Call LTP</th>
+            <th>Strike Price</th>
+            <th>Put LTP</th>
+            <th>Put Volume</th>
+            <th>Put Change in OI</th>
+            <th>Put OI</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            <td class="{{#if CE.isHighestOI}}highest-oi{{/if}}">{{CE.openInterest}}</td>
+            <td class="{{#if CE.isHighestChangeOI}}highest-change-oi{{/if}}">{{CE.changeinOpenInterest}}</td>
+            <td>{{CE.totalTradedVolume}}</td>
+            <td>{{CE.lastPrice}}</td>
+            <td class="{{#if isCurrentStrike}}strike-price{{else}}other-strike-price{{/if}}">{{strikePrice}}</td>
+            <td>{{PE.lastPrice}}</td>
+            <td>{{PE.totalTradedVolume}}</td>
+            <td class="{{#if PE.isHighestChangeOI}}highest-change-oi{{/if}}">{{PE.changeinOpenInterest}}</td>
+            <td class="{{#if PE.isHighestOI}}highest-oi{{/if}}">{{PE.openInterest}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>{{totals.callOI}}</td>
+            <td>{{totals.callChangeOI}}</td>
+            <td colspan="5">PCR: {{pcr}}</td>
+            <td>{{totals.putChangeOI}}</td>
+            <td>{{totals.putOI}}</td>
+        </tr>
+    </tfoot>
+</table>

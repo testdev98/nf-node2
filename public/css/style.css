@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    padding: 15px;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.market-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto 15px;
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.info-item .label {
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.info-item .value {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.info-item .value.support {
+    color: #1b5e20;
+}
+
+.info-item .value.resistance {
+    color: #c62828;
+}
+
+table {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+th {
+    padding: 8px 6px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+th:last-child {
+    border-right: none;
+}
+
+td {
+    padding: 6px 6px;
+    text-align: right;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f8f9ff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Strike Price Column */
+td:nth-child(5) {
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.strike-price {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    font-weight: bold;
+    position: relative;
+}
+
+.strike-price::before {
+    content: '▶';
+    position: absolute;
+    left: 8px;
+    font-size: 0.8rem;
+}
+
+.other-strike-price {
+    background-color: #f8f9fa;
+}
+
+/* Call Side (Left) */
+td:nth-child(1),
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4) {
+    background-color: #fff5f5;
+}
+
+/* Put Side (Right) */
+td:nth-child(6),
+td:nth-child(7),
+td:nth-child(8),
+td:nth-child(9) {
+    background-color: #f0f9ff;
+}
+
+/* Highest OI - Green */
+.highest-oi {
+    background: #c8e6c9 !important;
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+/* Highest Change in OI - Orange */
+.highest-change-oi {
+    background: #ffe0b2 !important;
+    font-weight: bold;
+    color: #e65100;
+}
+
+/* Footer Totals */
+tfoot {
+    background: #e8eaf6;
+    border-top: 3px solid #667eea;
+}
+
+tfoot td {
+    padding: 8px 6px;
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: none;
+}
+
+/* Call Total Columns */
+tfoot td:nth-child(1),
+tfoot td:nth-child(2) {
+    background-color: #ffebee;
+}
+
+/* Put Total Columns */
+tfoot td:nth-child(8),
+tfoot td:nth-child(9) {
+    background-color: #e3f2fd;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    table {
+        font-size: 0.85rem;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}

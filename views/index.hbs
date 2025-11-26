@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <div class="market-info">
+        <div class="info-item">
+            <span class="label">Current:</span>
+            <span class="value">{{marketData.currentPrice}}</span>
+        </div>
+        <div class="info-item">
+            <span class="label">Open:</span>
+            <span class="value">{{marketData.open}}</span>
+        </div>
+        <div class="info-item">
+            <span class="label">High:</span>
+            <span class="value">{{marketData.high}}</span>
+        </div>
+        <div class="info-item">
+            <span class="label">Prev Close:</span>
+            <span class="value">{{marketData.prevClose}}</span>
+        </div>
+        <div class="info-item">
+            <span class="label">PCR:</span>
+            <span class="value pcr">{{pcr}}</span>
+        </div>
+        <div class="info-item">
+            <span class="label">Support:</span>
+            <span class="value support">{{support}}</span>
+        </div>
+        <div class="info-item">
+            <span class="label">Resistance:</span>
+            <span class="value resistance">{{resistance}}</span>
+        </div>
+    </div>
+    <div id="option-chain-container">
+        {{> option-chain-table}}
+    </div>
+    <script>
+        // Refresh every 3 minutes
+        setInterval(() => {
+            fetch('/data')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('option-chain-container').innerHTML = html;
+                });
+        }, 180000);
+    </script>
+</body>
+</html>
