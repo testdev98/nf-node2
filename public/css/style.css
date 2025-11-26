@@ -189,14 +189,123 @@ tfoot td:nth-child(9) {
 /* Responsive */
 @media (max-width: 1200px) {
     table {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     
     th, td {
-        padding: 10px 8px;
+        padding: 8px 6px;
     }
     
     h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .market-info {
+        gap: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .info-item .label {
+        font-size: 0.65rem;
+    }
+
+    .info-item .value {
+        font-size: 0.9rem;
+    }
+
+    /* Make table scrollable horizontally */
+    #option-chain-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 800px;
+        font-size: 0.75rem;
+    }
+
+    th {
+        padding: 6px 4px;
+        font-size: 0.7rem;
+    }
+
+    td {
+        padding: 5px 4px;
+        font-size: 0.75rem;
+    }
+
+    td:nth-child(5) {
+        font-size: 0.8rem;
+    }
+
+    tfoot td {
+        padding: 6px 4px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .market-info {
+        gap: 8px;
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+
+    .info-item .label {
+        font-size: 0.6rem;
+    }
+
+    .info-item .value {
+        font-size: 0.85rem;
+    }
+
+    table {
+        min-width: 700px;
+        font-size: 0.7rem;
+    }
+
+    th {
+        padding: 5px 3px;
+        font-size: 0.65rem;
+    }
+
+    td {
+        padding: 4px 3px;
+        font-size: 0.7rem;
+    }
+
+    td:nth-child(5) {
+        font-size: 0.75rem;
+    }
+
+    tfoot td {
+        padding: 5px 3px;
+        font-size: 0.7rem;
+    }
+
+    .strike-price::before {
+        left: 4px;
+        font-size: 0.7rem;
     }
 }
