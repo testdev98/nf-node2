@@ -24,7 +24,7 @@ app.get("/", async (req, res) => {
   const niftyData = await api.getNiftyData();
   const processedData = processData(niftyData);
   res.render("index", {
-    title: "Nifty50 Option Chain",
+    title: "",
     data: processedData.filteredData,
     totals: processedData.totals,
     pcr: processedData.pcr,
